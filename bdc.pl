@@ -93,27 +93,27 @@ linea(9,chilpancingo,normal,normal).
 linea(9,patriotismo,normal,normal).
 linea(9,tacubaya,transbordo,terminal).
 
-linea(B,Buenavista,transbordo,terminal).
-linea(B,Guerrero,transbordo,normal).
-linea(B,Garibaldi-Lagunilla,normal,normal).
-linea(B,Lagunilla,normal,normal).
-linea(B,Tepit,normal,normal).
-linea(B,Morelos,transbordo,normal).
-linea(B,San_Lázaro,transbordo,normal).
-linea(B,Ricardo_Flores_Magón,normal,normal).
-linea(B,Romero_Rubi,normal,normal).
-linea(B,Oceanía	Gustavo_A._Mader,transbordo,normal).
-linea(B,Deportivo_Oceaní,normal,normal).
-linea(B,Bosque_de_Aragó,normal,normal).
-linea(B,Villa_de_Aragó,normal,normal).
-linea(B,Nezahualcóyot,normal,normal).
-linea(B,Impulsor,normal,normal).
-linea(B,Río_de_los_Remedio,normal,normal).
-linea(B,Múzquiz	Ecatepec_de_Morelo,normal,normal).
-linea(B,Ecatepe,normal,normal).
-linea(B,Olímpic,normal,normal).
-linea(B,Plaza_Aragó,normal,normal).
-linea(B,Ciudad_Aztec,normal,terminal).
+linea(b,buenavista,transbordo,terminal).
+linea(b,guerrero,transbordo,normal).
+linea(b,garibaldi-lagunilla,normal,normal).
+linea(b,lagunilla,normal,normal).
+linea(b,tepit,normal,normal).
+linea(b,morelos,transbordo,normal).
+linea(b,san_lázaro,transbordo,normal).
+linea(b,ricardo_flores_magón,normal,normal).
+linea(b,romero_rubi,normal,normal).
+linea(b,oceanía	gustavo_a_madero,transbordo,normal).
+linea(b,deportivo_oceaní,normal,normal).
+linea(b,bosque_de_aragó,normal,normal).
+linea(b,villa_de_aragó,normal,normal).
+linea(b,nezahualcóyot,normal,normal).
+linea(b,impulsor,normal,normal).
+linea(b,río_de_los_remedio,normal,normal).
+linea(b,múzquiz	ecatepec_de_morelo,normal,normal).
+linea(b,ecatepec,normal,normal).
+linea(b,olímpic,normal,normal).
+linea(b,plaza_aragó,normal,normal).
+linea(b,ciudad_aztec,normal,terminal).
 
 linea(2,cuatro_caminos,normal,terminal).
 linea(2,panteones,normal,paso).
