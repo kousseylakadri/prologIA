@@ -1,8 +1,11 @@
-%% linea(numero,nombre,tipo).
-%% tipo:
+%% linea(numero,nombre,conexion,tipo).
+%% conexion:
 %%  normal
-%%  conexion
+%%  transbordo
+%% tipo:
+%%  paso
 %%  terminal
+
 %% David Pares / Vicente Impares
 
-linea(1,pantitlán).
+linea(1,pantitlán,transbordo,terminal).
