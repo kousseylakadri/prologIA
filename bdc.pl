@@ -8,24 +8,24 @@
 
 %%_David_Pares_/_Vicente_Impares
 
-linea(1,pantitlán,transbordo,terminal).
+linea(1,pantitlan,transbordo,terminal).
 linea(1,zaragoza,normal,normal).
-linea(1,gómez_farías,normal,normal).
-linea(1,boulevard_puerto_aéreo,normal,normal).
+linea(1,gomez_farias,normal,normal).
+linea(1,boulevard_puerto_aereo,normal,normal).
 linea(1,balbuena,normal,normal).
 linea(1,moctezuma,normal,normal).
-linea(1,san_lázaro,transbordo,normal).
+linea(1,san_lazaro,transbordo,normal).
 linea(1,candelaria,transbordo,normal).
 linea(1,merced,normal,normal).
-linea(1,pino_suárez,transbordo,normal).
-linea(1,isabel_la_católica,normal,normal).
+linea(1,pino_suarez,transbordo,normal).
+linea(1,isabel_la_catolica,normal,normal).
 linea(1,salto_del_agua,transbordo,normal).
 linea(1,balderas,transbordo,normal).
-linea(1,cuauhtémoc,normal,normal).
+linea(1,cuauhtemoc,normal,normal).
 linea(1,insurgentes,normal,normal).
 linea(1,sevilla,normal,normal).
 linea(1,chapultepec,normal,normal).
-linea(1,juanacatlán,normal,normal).
+linea(1,juanacatlan,normal,normal).
 linea(1,tacubaya,transbordo,normal).
 linea(1,observatorio,normal,terminal).
 
@@ -36,40 +36,40 @@ linea(3,la_raza,transbordo,normal).
 linea(3,tlatelolco,normal,normal).
 linea(3,guerrero,transbordo,normal).
 linea(3,hidalgo,transbordo,normal).
-linea(3,juárez,normal,normal).
+linea(3,juarez,normal,normal).
 linea(3,balderas,transbordo,normal).
-linea(3,niños_héroes,normal,normal).
+linea(3,niños_heroes,normal,normal).
 linea(3,hospital_general,normal,normal).
-linea(3,centro_médico,transbordo,normal).
-linea(3,etiopía-plaza_de_la_transparencia,normal,normal).
+linea(3,centro_medico,transbordo,normal).
+linea(3,etiopia-plaza_de_la_transparencia,normal,normal).
 linea(3,eugenia,normal,normal).
-linea(3,división_del_norte,normal,normal).
+linea(3,division_del_norte,normal,normal).
 linea(3,zapata,transbordo,normal).
-linea(3,coyoacán,normal,normal).
+linea(3,coyoacan,normal,normal).
 linea(3,viveros-derechos_humanos,normal,normal).
-linea(3,miguel_ángel_de_quevedo,normal,normal).
+linea(3,miguel_angel_de_quevedo,normal,normal).
 linea(3,copilco,normal,normal).
 linea(3,universidad,normal,terminal).
 
-linea(5,pantitlán,transbordo,terminal).
+linea(5,pantitlan,transbordo,terminal).
 linea(5,hangares,normal,normal).
-linea(5,terminal_aérea,normal,normal).
-linea(5,oceanía,transbordo,normal).
-linea(5,aragón,normal,normal).
+linea(5,terminal_aerea,normal,normal).
+linea(5,oceania,transbordo,normal).
+linea(5,aragon,normal,normal).
 linea(5,eduardo_molina,normal,normal).
 linea(5,consulado,transbordo,normal).
-linea(5,valle_gómez,normal,normal).
+linea(5,valle_gomez,normal,normal).
 linea(5,misterios,normal,normal).
 linea(5,la_raza,transbordo,normal).
 linea(5,autobuses_del_norte,normal,normal).
-linea(5,instituto_del_petróleo,transbordo,normal).
-linea(5,politécnico,normal,terminal).
+linea(5,instituto_del_petroleo,transbordo,normal).
+linea(5,politecnico,normal,terminal).
 
 linea(7,el_rosario,transbordo,terminal).
-linea(7,aquiles_serdán,normal,normal).
-linea(7,refinería,normal,normal).
+linea(7,aquiles_serdan,normal,normal).
+linea(7,refineria,normal,normal).
 linea(7,tacuba,transbordo,normal).
-linea(7,san_joaquín,normal,normal).
+linea(7,san_joaquin,normal,normal).
 linea(7,polanco,normal,normal).
 linea(7,auditorio,normal,nom).
 linea(7,constituyentes,normal,normal).
@@ -79,16 +79,16 @@ linea(7,san_antonio,normal,normal).
 linea(7,mixcoac,transbordo,normal).
 linea(7,barranca_del_muerto,normal,terminal).
 
-linea(9,pantitlán,transbordo,terminal).
+linea(9,pantitlan,transbordo,terminal).
 linea(9,puebla,normal,normal).
 linea(9,iztacalco,normal,normal).
 linea(9,ciudad_deportiva,normal,normal).
-linea(9,velódromo,normal,normal).
+linea(9,velodromo,normal,normal).
 linea(9,mixiuhca,normal,normal).
 linea(9,jamaica,transbordo,normal).
 linea(9,chabacano,transbordo,normal).
-linea(9,lázaro_cárdenas,normal,normal).
-linea(9,centro_médico,transbordo,normal).
+linea(9,lazaro_cardenas,normal,normal).
+linea(9,centro_medico,transbordo,normal).
 linea(9,chilpancingo,normal,normal).
 linea(9,patriotismo,normal,normal).
 linea(9,tacubaya,transbordo,terminal).
@@ -99,20 +99,20 @@ linea(b,garibaldi-lagunilla,normal,normal).
 linea(b,lagunilla,normal,normal).
 linea(b,tepit,normal,normal).
 linea(b,morelos,transbordo,normal).
-linea(b,san_lázaro,transbordo,normal).
-linea(b,ricardo_flores_magón,normal,normal).
+linea(b,san_lazaro,transbordo,normal).
+linea(b,ricardo_flores_magon,normal,normal).
 linea(b,romero_rubi,normal,normal).
-linea(b,oceanía	gustavo_a_madero,transbordo,normal).
-linea(b,deportivo_oceaní,normal,normal).
-linea(b,bosque_de_aragó,normal,normal).
-linea(b,villa_de_aragó,normal,normal).
-linea(b,nezahualcóyot,normal,normal).
+linea(b,oceania	gustavo_a_madero,transbordo,normal).
+linea(b,deportivo_oceani,normal,normal).
+linea(b,bosque_de_arago,normal,normal).
+linea(b,villa_de_arago,normal,normal).
+linea(b,nezahualcoyot,normal,normal).
 linea(b,impulsor,normal,normal).
-linea(b,río_de_los_remedio,normal,normal).
+linea(b,rio_de_los_remedio,normal,normal).
 linea(b,múzquiz	ecatepec_de_morelo,normal,normal).
 linea(b,ecatepec,normal,normal).
-linea(b,olímpic,normal,normal).
-linea(b,plaza_aragó,normal,normal).
+linea(b,olimpic,normal,normal).
+linea(b,plaza_arago,normal,normal).
 linea(b,ciudad_aztec,normal,terminal).
 
 linea(2,cuatro_caminos,normal,terminal).
@@ -157,7 +157,7 @@ linea(6,uam_azcapotzalco,normal,paso).
 linea(6,ferreria_arena_cdmx,normal,paso).
 linea(6,norte_45,normal,paso).
 linea(6,vallejo,normal,paso).
-linea(6,instituto_del_petróleo,transbordo,paso).
+linea(6,instituto_del_petroleo,transbordo,paso).
 linea(6,lindavista,normal,paso).
 linea(6,deportivo_18_de_marzo,transbordo,paso).
 linea(6,la_villa_basilica,normal,paso).
