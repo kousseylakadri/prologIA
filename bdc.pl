@@ -38,7 +38,7 @@ linea(3,guerrero,transbordo,normal).
 linea(3,hidalgo,transbordo,normal).
 linea(3,juarez,normal,normal).
 linea(3,balderas,transbordo,normal).
-linea(3,niños_heroes,normal,normal).
+linea(3,ninos_heroes,normal,normal).
 linea(3,hospital_general,normal,normal).
 linea(3,centro_medico,transbordo,normal).
 linea(3,etiopia-plaza_de_la_transparencia,normal,normal).
@@ -102,14 +102,14 @@ linea(b,morelos,transbordo,normal).
 linea(b,san_lazaro,transbordo,normal).
 linea(b,ricardo_flores_magon,normal,normal).
 linea(b,romero_rubi,normal,normal).
-linea(b,oceania	gustavo_a_madero,transbordo,normal).
+linea(b,oceania_gustavo_a_madero,transbordo,normal).
 linea(b,deportivo_oceani,normal,normal).
 linea(b,bosque_de_arago,normal,normal).
 linea(b,villa_de_arago,normal,normal).
 linea(b,nezahualcoyot,normal,normal).
 linea(b,impulsor,normal,normal).
 linea(b,rio_de_los_remedio,normal,normal).
-linea(b,múzquiz	ecatepec_de_morelo,normal,normal).
+linea(b,muzquiz_ecatepec_de_morelo,normal,normal).
 linea(b,ecatepec,normal,normal).
 linea(b,olimpic,normal,normal).
 linea(b,plaza_arago,normal,normal).
@@ -138,7 +138,7 @@ linea(2,nativitas,normal,paso).
 linea(2,portales,normal,paso).
 linea(2,ermita,transbordo,paso).
 linea(2,general_anaya,normal,paso).
-linea(2,tasqueña,normal,terminal).
+linea(2,tasquena,normal,terminal).
 
 linea(4,martin_carrera,normal,terminal).
 linea(4,talisman,normal,paso).
