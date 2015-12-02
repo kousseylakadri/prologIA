@@ -229,7 +229,10 @@ estaciones(Nombre):-linea(Nombre,Estaciones),
 					format('La ruta ~w : tiene las estaciones: ~w',[Nombre,Estaciones]).
 
 extremos(Linea):-linea(Linea,Estaciones),
-				[Head| Others] is Estaciones
+				[Head|_] = Estaciones,
+				reverse(Estaciones,InvEst),
+				[InvHead|_] = InvEst,
+				format('Ruta ~w, tiene como terminales a: ~w <--> ~w',[Linea,Head,InvHead]).
 
 imprime([]).
 imprime([H|T]):-format('De la estacion ~w toma la linea ~w hacia ~w\n', H),imprime(T).
