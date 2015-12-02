@@ -210,11 +210,11 @@ linea(12,[tlahuac,
 
 encuentraRuta(X,Y):-encuentraRuta(X,Y,[],[]).
 
-encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones),
-							\+ member(Linea,Lineas),
-							member(X,Estaciones),
-							member(Y,Estaciones),
-							append(Salida,[[X,Linea,Y]],NuevaSalida),
+encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones), %% trae todas las listas de Estaciones de todas la lineas
+							\+ member(Linea,Lineas), %% Verifica que Linea no haya sido ya visitada
+							member(X,Estaciones), %% verifica que el origen este en alguna de las listas de Estaciones
+							member(Y,Estaciones), %% verifica que el destino este en alguna de las listas de Estaciones
+							append(Salida,[[X,Linea,Y]],NuevaSalida), %% agrega a la lista Salida una lista que contiene el origen, la linea visitada, el destino; y las mete a la lista NuevaSalida
 							imprime(NuevaSalida). %% Imprime todos los pasos que se siguieron para llegar de origen a destino
 
 encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones), %% Trae Linea por Linea con una Lista de sus Estaciones
@@ -225,13 +225,13 @@ encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones), %% Trae Linea por Lin
 							append(Salida,[[X,Linea,Transbordo]],NuevaSalida), %% Concatena en NuevaSalida, los parametros a imprimir que representan los pasos a seguir en cada linea.
 							encuentraRuta(Transbordo,Y,[Linea|Lineas],NuevaSalida).
 
-estaciones(Nombre):-linea(Nombre,Estaciones),
-					format('La ruta ~w : tiene las estaciones: ~w',[Nombre,Estaciones]).
+estaciones(Numero):-linea(Numero,Estaciones), %% trae la lista de estaciones que cumplen con la condición numero 
+					format('La ruta ~w : tiene las estaciones: ~w',[Numero,Estaciones]).
 
-extremos(Linea):-linea(Linea,Estaciones),
-				[Head|_] = Estaciones,
-				reverse(Estaciones,InvEst),
-				[InvHead|_] = InvEst,
+extremos(Linea):-linea(Linea,Estaciones), %% guarda la lista de estaciones que cumplen con la linea dada
+				[Head|_] = Estaciones,	 %% toma la cabeza de la lista Estaciones
+				reverse(Estaciones,InvEst), %%  Invierte la lista estaciones y la guarda en InvEst
+				[InvHead|_] = InvEst, %% toma la cabeza de la lista estaciones que era el ultimo elemento de Estaciones
 				format('Ruta ~w, tiene como terminales a: ~w <--> ~w',[Linea,Head,InvHead]).
 
 imprime([]).

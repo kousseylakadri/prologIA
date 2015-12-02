@@ -2,34 +2,32 @@
 %%%%                MAIN                 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-consult('bdc.pl').
-
-opt1 :- consult('bdc.pl'),
-        nl,
+opt1 :- nl,
         write('Escribe los nombres completamente en minúsculas,'), nl,
         write('seguidos de un punto.'), nl,
         nl,
-        consultaLinea.
+        instrucciones.
 
-opt2 :- consult('bdc.pl'),
-        nl,
+opt2 :- nl,
         write('Escribe los nombres completamente en minúsculas,'), nl,
         write('seguidos de un punto.'), nl,
         nl,
-        consultar.
+        generaRuta.
 
 
-consultaLinea :- write('Que linea deseas consultar?'),
-                   read(Numero),
-                   linea(Numero,r).
-
-linea(N,E) :- estacion(N,E,_,_).
+instrucciones :- write('En esta sección existen dos funciones'),
+					write('1. estaciones(Linea)'),
+					write('2. extremos(Linea)'),
+					write('Donde: Linea es el numero o letra de la linea que quieres consultar'),
+					write('Nota: escribe las linea de la siguiente forma: 1,2,3,4,a,b,etc.'), 
+					read(Option).
+                 
 
 generaRuta :- write('¿Cúal es tu estación de salida?'),
 				read(Origen),nl,
 			  write('¿Cúal es tu estación destino?'),
 			  	read(Destino),nl,
-			  	ruta(Origen,Destino).
+			  	encuentraRuta(Origen,Destino).
 
 
 % Programa que muestra un menu
@@ -56,14 +54,17 @@ error:- borraPantalla,
 %Mensaje antes de salir
 salida:- borraPantalla,
 	 escribe("|------------------PROLOG----------------------|"),nl,
-	 escribe("|----------- Inteligencia Artificial-----------|"),nl,
-	 escribe("|-------------------------------------Adios----|"),nl,
+	 escribe("|------------Inteligencia Artificial-----------|"),nl,
+	 escribe("|----------------------------------------------|"),nl,
+	 escribe("|--Altamirano Peralta David--------------------|"),nl,
+	 escribe("|--Guerra Vicente------------------------------|"),nl,
+	 escribe("|-------------------------------------Byte-----|"),nl,
 	 pausa,
 	 halt.
 
 /*Opciones*/
 
-opciones(X):-  ((X = 1) -> opt1,nl,pausa;
+opciones(X):-  ((X = 1) -> opt1,nl,;
 		      	(X = 2) -> escribe("Opcion 2"),nl,pausa;
 		       	(X = 3) -> salida;
 		     	error).
