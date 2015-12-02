@@ -78,6 +78,7 @@ linea(4,[martin_carrera,
 		jamaica,
 		santa_anita]).
 
+
 linea(5,[pantitlan,
 		hangares,
 		terminal_aerea,
@@ -141,3 +142,88 @@ linea(b,[buenavista,
 		olimpica,
 		plaza_aragon,
 		ciudad_azteca]).
+
+linea(6,[el_rosario,
+		tezozomoc,
+		uam_azcapotzalco,
+		ferreria_arena_cdmx,
+		norte_45,
+		vallejo,
+		instituto_del_petroleo,
+		lindavista,
+		deportivo_18_de_marzo,
+		la_villa_basilica,
+		martin_carrera]).
+
+linea(8,[garibaldi,
+		bellas_artes,
+		san_juan_de_letran,
+		salto_del_agua,
+		doctores,
+		obrera,
+		chabacano,
+		la_viga,
+		santa_anita,
+		coyuya,
+		iztacalco,
+		apatlaco,
+		aculco,
+		escuadron_201,
+		atlalilco,
+		iztapalapa,
+		cerro_de_la_estrella,
+		uam_i,
+		constitucion_de_1917]).
+
+linea(a,[pantitlan,
+		agricola_oriental,
+		canal_de_san_juan,
+		tepalcates,
+		guelatao,
+		penon_viejo,
+		acatitla,
+		santa_marta,
+		los_reyes,
+		la_paz]).
+
+
+linea(12,[tlahuac,
+		tlaltenco,
+		zapotitlan,
+		nopalera,
+		olivos,
+		tezonco,
+		periferico_oriente,
+		calle_11,
+		lomas_estrella,
+		san_andres_tomatlan,
+		culhuacan,
+		atlalilco,
+		mexicaltzingo,
+		ermita,
+		eje_central,
+		parque_de_los_venados,
+		zapata,
+		hospital_20_de_noviembre,
+		insurgentes_sur,
+		mixcoac]).
+
+findRoute(X,Y):-findRoute(X,Y,[],[]).
+
+findRoute(X,Y,Lines,Output):-linea(Line,Stations),
+							\+ member(Line,Lines),
+							member(X,Stations),
+							member(Y,Stations),
+							append(Output,[[X,Line,Y]],NewOutput),
+							print(NewOutput).
+
+findRoute(X,Y,Lines,Output):-linea(Line,Stations),
+							\+ member(Line,Lines),
+							member(X,Stations),
+							member(Intermediate,Stations),
+							X\=Intermediate,Intermediate\=Y,
+							append(Output,[[X,Line,Intermediate]],NewOutput),
+							findRoute(Intermediate,Y,[Line|Lines],NewOutput).
+
+print([]).
+print([H|T]):-format('De la estacion ~w toma la linea ~w hacia ~w\n', H),print(T).
