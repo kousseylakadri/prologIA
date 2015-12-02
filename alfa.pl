@@ -77,4 +77,4 @@ linea(4,[martin_carrera,
 		jamaica,
 		santa_anita]).
 
-lin
+lin 	
