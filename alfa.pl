@@ -228,5 +228,8 @@ encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones), %% Trae Linea por Lin
 estaciones(Nombre):-linea(Nombre,Estaciones),
 					format('La ruta ~w : tiene las estaciones: ~w',[Nombre,Estaciones]).
 
+extremos(Linea):-linea(Linea,Estaciones),
+				[Head| Others] is Estaciones
+
 imprime([]).
 imprime([H|T]):-format('De la estacion ~w toma la linea ~w hacia ~w\n', H),imprime(T).
