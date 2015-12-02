@@ -215,14 +215,14 @@ encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones),
 							member(X,Estaciones),
 							member(Y,Estaciones),
 							append(Salida,[[X,Linea,Y]],NuevaSalida),
-							imprime(NuevaSalida).
+							imprime(NuevaSalida). %% Imprime todos los pasos que se siguieron para llegar de origen a destino
 
-encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones),
-							\+ member(Linea,Lineas),
-							member(X,Estaciones),
-							member(Transbordo,Estaciones),
-							X\=Transbordo,Transbordo\=Y,
-							append(Salida,[[X,Linea,Transbordo]],NuevaSalida),
+encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones), %% Trae Linea por Linea con una Lista de sus Estaciones
+							\+ member(Linea,Lineas), %% Verifica que Linea NO este dentro de las Lineas Visitadas
+							member(X,Estaciones), %% Verifica si la estacion de origen esta en la lista de Estaciones de la linea
+							member(Transbordo,Estaciones), %% En busqueda de Transbordo, verifica si la estacion se encuentra en otra linea
+							X\=Transbordo,Transbordo\=Y, %% Descarta que Transbordo sea la estacion de origen
+							append(Salida,[[X,Linea,Transbordo]],NuevaSalida), %% Concatena en NuevaSalida, los parametros a imprimir que representan los pasos a seguir en cada linea.
 							encuentraRuta(Transbordo,Y,[Linea|Lineas],NuevaSalida).
 
 imprime([]).
