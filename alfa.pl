@@ -208,22 +208,22 @@ linea(12,[tlahuac,
 		insurgentes_sur,
 		mixcoac]).
 
-findRoute(X,Y):-findRoute(X,Y,[],[]).
+encuentraRuta(X,Y):-encuentraRuta(X,Y,[],[]).
 
-findRoute(X,Y,Lines,Output):-linea(Line,Stations),
-							\+ member(Line,Lines),
-							member(X,Stations),
-							member(Y,Stations),
-							append(Output,[[X,Line,Y]],NewOutput),
-							print(NewOutput).
+encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones),
+							\+ member(Linea,Lineas),
+							member(X,Estaciones),
+							member(Y,Estaciones),
+							append(Salida,[[X,Linea,Y]],NuevaSalida),
+							imprime(NuevaSalida).
 
-findRoute(X,Y,Lines,Output):-linea(Line,Stations),
-							\+ member(Line,Lines),
-							member(X,Stations),
-							member(Intermediate,Stations),
-							X\=Intermediate,Intermediate\=Y,
-							append(Output,[[X,Line,Intermediate]],NewOutput),
-							findRoute(Intermediate,Y,[Line|Lines],NewOutput).
+encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones),
+							\+ member(Linea,Lineas),
+							member(X,Estaciones),
+							member(Transbordo,Estaciones),
+							X\=Transbordo,Transbordo\=Y,
+							append(Salida,[[X,Linea,Transbordo]],NuevaSalida),
+							encuentraRuta(Transbordo,Y,[Linea|Lineas],NuevaSalida).
 
-print([]).
-print([H|T]):-format('De la estacion ~w toma la linea ~w hacia ~w\n', H),print(T).
+imprime([]).
+imprime([H|T]):-format('De la estacion ~w toma la linea ~w hacia ~w\n', H),imprime(T).
