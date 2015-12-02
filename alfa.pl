@@ -225,5 +225,13 @@ encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones), %% Trae Linea por Lin
 							append(Salida,[[X,Linea,Transbordo]],NuevaSalida), %% Concatena en NuevaSalida, los parametros a imprimir que representan los pasos a seguir en cada linea.
 							encuentraRuta(Transbordo,Y,[Linea|Lineas],NuevaSalida).
 
+estaciones(Nombre):-linea(Nombre,Estaciones),
+					print('La ruta ~w : tiene las estaciones: ~w',Nombre,Estaciones)
+
+
+linea(Linea,Estaciones),
+							\+ member(Linea,Lineas),
+							member(X,Estaciones),
+							member(Y,Estaciones),
 imprime([]).
 imprime([H|T]):-format('De la estacion ~w toma la linea ~w hacia ~w\n', H),imprime(T).
