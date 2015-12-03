@@ -2,30 +2,43 @@
 %%%%                MAIN                 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-opt1 :- nl,
-        write('Escribe los nombres completamente en minúsculas,'), nl,
-        write('seguidos de un punto.'), nl,
-        nl,
-        instrucciones.
+submenu1 :- write('En esta sección existen dos funciones'),nl,
+			tab(10),write('1. Listar las estaciones de una linea.'),nl,
+			tab(10),write('2. Listar las terminales de una linea.'),nl,
+			escribe("Tu opcion es: "), read(X),
+			opciones1(X).
+
+opt1_1 :- nl,
+	      write('¿Qué linea deseas consultar?'),nl,
+	      write('linea puede tomar los valores:'),nl,
+	      write('1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, 12'),nl,
+	      read(W),
+	      estaciones(W),
+	      pausa.
+
+opt1_2 :- nl,
+	      write('¿Qué linea deseas consultar?'),nl,
+	      write('linea puede tomar los valores:'),nl,
+	      write('1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, 12'),nl,
+	      read(W),
+	      extremos(W),
+	      pausa.
 
 opt2 :- nl,
-        write('Escribe los nombres completamente en minúsculas,'), nl,
-        write('seguidos de un punto.'), nl,
-        nl,
+        write('Escribe los nombres completamente en minúsculas,'),nl,
+        write('seguidos de un punto.'),nl,
+        write('Los espacios en blanco sustituyelos con,'),nl,
+        write('un guión bajo, ejemplo: indios_verdes.'),nl,nl,
         generaRuta.
 
+         
+opciones1(X):-  ((X = 1) -> opt1_1,nl;
+		      	 (X = 2) -> opt1_2,nl;
+		     	 error).
 
-instrucciones :- write('En esta sección existen dos funciones'),
-					write('1. estaciones(Linea)'),
-					write('2. extremos(Linea)'),
-					write('Donde: Linea es el numero o letra de la linea que quieres consultar'),
-					write('Nota: escribe las linea de la siguiente forma: 1,2,3,4,a,b,etc.'), 
-					read(Option).
-                 
-
-generaRuta :- write('¿Cúal es tu estación de salida?'),
+generaRuta :- write('¿Cúal es tu estación de salida? '),
 				read(Origen),nl,
-			  write('¿Cúal es tu estación destino?'),
+			  write('¿Cúal es tu estación destino? '),
 			  	read(Destino),nl,
 			  	encuentraRuta(Origen,Destino).
 
@@ -52,32 +65,32 @@ error:- borraPantalla,
 	pausa.
 
 %Mensaje antes de salir
-salida:- borraPantalla,
-	 escribe("|------------------PROLOG----------------------|"),nl,
-	 escribe("|------------Inteligencia Artificial-----------|"),nl,
-	 escribe("|----------------------------------------------|"),nl,
-	 escribe("|--Altamirano Peralta David--------------------|"),nl,
-	 escribe("|--Guerra Vicente------------------------------|"),nl,
-	 escribe("|-------------------------------------Byte-----|"),nl,
-	 pausa,
-	 halt.
+salida:- escribe("|------------------PROLOG----------------------|"),nl,
+		 escribe("|------------Inteligencia Artificial-----------|"),nl,
+		 escribe("|----------------------------------------------|"),nl,
+		 escribe("|--Altamirano Peralta David--------------------|"),nl,
+		 escribe("|--Guerra Hernández Vicente--------------------|"),nl,
+		 escribe("|-------------------------------------Byte-----|"),nl,
+		 pausa,
+		 halt.
 
 /*Opciones*/
 
-opciones(X):-  ((X = 1) -> opt1,nl,;
-		      	(X = 2) -> escribe("Opcion 2"),nl,pausa;
+opciones(X):-  ((X = 1) -> submenu1,nl;
+		      	(X = 2) -> opt2,nl,pausa;
 		       	(X = 3) -> salida;
 		     	error).
 
-menu:- borraPantalla,
+menu:-  consult('alfa.pl'),
 		escribe("-----------PROYECTO FINAL--------------"),nl,
 		escribe("----------SISTEMA  EXPERTO-------------"),nl,
 	    escribe("-----------Menu principal--------------"),nl,
 	    escribe("Selecciona una opción."),nl,
 	    escribe("Opciones: "),nl,
-	    tab(10),escribe("1) Consultar las estaciones de una linea."),nl,
-	    tab(10),escribe("2) Generar ruta de viaje."),nl,
-	    tab(10),escribe("3) Salir"),nl,
+	    tab(10),escribe("1. Consultar las estaciones de una linea."),nl,
+	    tab(10),escribe("2. Generar ruta de viaje."),nl,
+	    tab(10),escribe("3. Salir"),nl,
+	    escribe("Escribe tu opcion seguida de un punto."),nl,	
 	    escribe("Tu opcion es: "), read(X),
 	    opciones(X),
 	    menu.

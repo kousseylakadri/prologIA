@@ -226,13 +226,13 @@ encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones), %% Trae Linea por Lin
 							encuentraRuta(Transbordo,Y,[Linea|Lineas],NuevaSalida).
 
 estaciones(Numero):-linea(Numero,Estaciones), %% trae la lista de estaciones que cumplen con la condición numero 
-					format('La ruta ~w : tiene las estaciones: ~w',[Numero,Estaciones]).
+					format('La linea ~w, tiene las estaciones: ~w',[Numero,Estaciones]).
 
 extremos(Linea):-linea(Linea,Estaciones), %% guarda la lista de estaciones que cumplen con la linea dada
 				[Head|_] = Estaciones,	 %% toma la cabeza de la lista Estaciones
 				reverse(Estaciones,InvEst), %%  Invierte la lista estaciones y la guarda en InvEst
 				[InvHead|_] = InvEst, %% toma la cabeza de la lista estaciones que era el ultimo elemento de Estaciones
-				format('Ruta ~w, tiene como terminales a: ~w <--> ~w',[Linea,Head,InvHead]).
+				format('La linea ~w, tiene como terminales a: ~w <--> ~w',[Linea,Head,InvHead]).
 
 imprime([]).
 imprime([H|T]):-format('De la estacion ~w toma la linea ~w hacia ~w\n', H),imprime(T).
