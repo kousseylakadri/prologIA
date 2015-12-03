@@ -212,24 +212,28 @@ linea(12,[tlahuac,
 
 % Funciones
 
-encuentraRuta(X,Y):-encuentraRuta(X,Y,[],[]).
+increment(X,Y):- Y is X + 1.
 
-encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones), %% trae todas las listas de Estaciones de todas la lineas
+encuentraRuta(X,Y):-encuentraRuta(X,Y,[],[],0,B).
+
+encuentraRuta(X,Y,Lineas,Salida,A,B):-linea(Linea,Estaciones), %% trae todas las listas de Estaciones de todas la lineas
 							\+ member(Linea,Lineas), %% Verifica que Linea no haya sido ya visitada
 							member(X,Estaciones), %% verifica que el origen este en alguna de las listas de Estaciones
 							member(Y,Estaciones), %% verifica que el destino este en alguna de las listas de Estaciones
 							append(Salida,[[X,Linea,Y]],NuevaSalida), %% agrega a la lista Salida una lista que contiene el origen, la linea visitada, el destino; y las mete a la lista NuevaSalida
-							imprime(NuevaSalida). %% Imprime todos los pasos que se siguieron para llegar de origen a destino
+    						imprime(NuevaSalida). %% Imprime todos los pasos que se siguieron para llegar de origen a destino
 
-encuentraRuta(X,Y,Lineas,Salida):-linea(Linea,Estaciones), %% Trae Linea por Linea con una Lista de sus Estaciones
+encuentraRuta(X,Y,Lineas,Salida,A,B):-linea(Linea,Estaciones), %% Trae Linea por Linea con una Lista de sus Estaciones
 							\+ member(Linea,Lineas), %% Verifica que Linea NO este dentro de las Lineas Visitadas
 							member(X,Estaciones), %% Verifica si la estacion de origen esta en la lista de Estaciones de la linea
 							member(Transbordo,Estaciones), %% En busqueda de Transbordo, verifica si la estacion se encuentra en otra linea
 							X\=Transbordo,Transbordo\=Y, %% Descarta que Transbordo sea la estacion de origen
 							append(Salida,[[X,Linea,Transbordo]],NuevaSalida), %% Concatena en NuevaSalida, los parametros a imprimir que representan los pasos a seguir en cada linea.
-							encuentraRuta(Transbordo,Y,[Linea|Lineas],NuevaSalida).
+							increment(A,B),
+    						write(B),
+    						encuentraRuta(Transbordo,Y,[Linea|Lineas],NuevaSalida,B,C).
 
-estaciones(Numero):-linea(Numero,Estaciones), %% trae la lista de estaciones que cumplen con la condición numero 
+estaciones(Numero):-linea(Numero,Estaciones), %% trae la lista de estaciones que cumplen con la condición numero
 					format('La linea ~w, tiene las estaciones: ~w',[Numero,Estaciones]).
 
 extremos(Linea):-linea(Linea,Estaciones), %% guarda la lista de estaciones que cumplen con la linea dada
@@ -240,3 +244,5 @@ extremos(Linea):-linea(Linea,Estaciones), %% guarda la lista de estaciones que c
 
 imprime([]).
 imprime([H|T]):-format('De la estacion ~w toma la linea ~w hacia ~w\n', H),imprime(T).
+
+
