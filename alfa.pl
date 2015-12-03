@@ -1,3 +1,6 @@
+
+:- dynamic linea/2.
+
 linea(1,[pantitlan,
 		zaragoza,
 		gomez_farias,
@@ -207,6 +210,8 @@ linea(12,[tlahuac,
 		hospital_20_de_noviembre,
 		insurgentes_sur,
 		mixcoac]).
+
+% Funciones
 
 encuentraRuta(X,Y):-encuentraRuta(X,Y,[],[]).
 

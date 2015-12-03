@@ -2,6 +2,44 @@
 %%%%                MAIN                 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+login:- write('usuario: '),
+ 		read(User), nl,
+ 		write('contraseña: '), 
+ 		read(Pass),
+ 		admin(User,Pass),	
+ 		menuadmin.
+
+start :-escribe("-----------Menu Acceso--------------"),nl,
+	    escribe("Selecciona una opción."),nl,
+	    escribe("Opciones: "),nl,
+	    tab(10),escribe("1. Usuario."),nl,
+	    tab(10),escribe("2. Administrador."),nl,
+	    escribe("Escribe tu opcion seguida de un punto."),nl,	
+	    escribe("Tu opcion es: "), read(X),
+	    startopt(X).
+
+startopt(X) :- ((X = 1) ->menu,nl;
+			 (X = 2) ->login,nl;
+			 error).
+
+menuadmin :- write('Introduce el numero o letra de la nueva linea'),nl,
+		   read(Linea),
+		   \+ linea(Linea,_),
+		   write('Ahora las estaciones que tendrá.'),nl,
+		   write('Cada estacion debe introducirse en minúsculas,'),nl,
+		   write('los espacios deben sustituirse por guiones bajos'),nl,
+		   write('seguidos de un punto.'),nl,
+		   nuevaEstacion(Estaciones),
+		   nuevaLinea(Linea,Estaciones).
+
+add_list([], L, L).
+add_list([H|T], L, L1) :- add(H, L2, L1), add_list(T, L, L2).
+
+nuevaEstacion(L) :- write(L).
+
+nuevaEstacion(listo) :- write('').
+
+
 submenu1 :- write('En esta sección existen dos funciones'),nl,
 			tab(10),write('1. Listar las estaciones de una linea.'),nl,
 			tab(10),write('2. Listar las terminales de una linea.'),nl,
@@ -65,7 +103,7 @@ error:- borraPantalla,
 	pausa.
 
 %Mensaje antes de salir
-salida:- escribe("|------------------PROLOG----------------------|"),nl,
+salida:- escribe("|--------------------PROLOG--------------------|"),nl,
 		 escribe("|------------Inteligencia Artificial-----------|"),nl,
 		 escribe("|----------------------------------------------|"),nl,
 		 escribe("|--Altamirano Peralta David--------------------|"),nl,
@@ -94,3 +132,10 @@ menu:-  consult('alfa.pl'),
 	    escribe("Tu opcion es: "), read(X),
 	    opciones(X),
 	    menu.
+
+% Administradores
+
+admin(admin,admin).
+admin(david,1234).
+admin(vicente,4321).
+
